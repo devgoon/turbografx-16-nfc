@@ -1,26 +1,11 @@
 # TurboGrapx 16 w/ NFC
 Support code for my version of a RPi-based Turbograpx 16
 
-This is based on/inspired by [Coderkevin](https://github.com/coderkevin/mini-nes)
+This is based on/inspired by [Coderkevin](https://github.com/coderkevin/mini-nes). Thank you Kevin!
 - Even simpler version of Coderkevin's work with a focus on a TG-16
-- Raspberry Pi
-- No reset button
-- TurboGrapx power button
-- Use a real TurboGrapx 16 case
-- "HuCard" art for NFC Cards NTAG216 
+- "HuCard" art sized for NFC Cards NTAG216 
 
 Here's a more detailed list of the features:
-
-## Power Button
-
-The Power button is handled via GPIO and reset pin on the RPi.
-The power button, when latched, brings the reset pin high, awakening the RPi from its shutdown.
-After the RPi is powered up, a script is used on an output GPIO pin to hold the reset pin high in addition to the power button.
-When the power button is unlatched, the GPIO holds the reset pin high until system shutdown completes.
-
-## Power LED
-
-The Power LED is connected to the reset pin, this indicates the true run state of the RPi. If the reset pin is high, the RPi is running. If the reset pin is low, then the RPi is held in reset and the CPU is in shutdown. It looks a little strange to see the power LED remain lit for a few seconds after unlatching the power button, but it is reassuring to know that the RPi isn't being subjected to a hard reset.
 
 ## NFC Hucard support
 
