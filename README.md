@@ -3,11 +3,7 @@ Support code for my version of a RPi-based Turbograpx 16
 
 This is based on/inspired by [Coderkevin](https://github.com/coderkevin/mini-nes). Thank you Kevin!
 - Even simpler version of Coderkevin's work with a focus on a TG-16
-- Raspberry Pi
-- No reset button
-- TurboGrapx power button
-- Use a real TurboGrapx 16 case
-- "HuCard" art for NFC Cards NTAG216 
+- "HuCard" art sized for NFC Cards NTAG216 
 
 Here's a more detailed list of the features:
 
