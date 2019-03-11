@@ -37,7 +37,7 @@ class NFCPoll():
 
             if uid:
                 self.logger.info( "Reading NFC UID: {}".format( uid ) )
-                rom = self.lookupCartridge( uid )
+                rom = self.lookupHuCard( uid )
 
             if rom:
                 self.loadRom( rom )
@@ -81,7 +81,7 @@ class NFCPoll():
         self.logger.debug( "cleanup" )
         self.nfc_close()
 
-    def lookupCartridge( self, uid ):
+    def lookupHuCard( self, uid ):
         hucards = self.options['hucards']
         if uid in hucards:
             return hucards[uid]
@@ -122,10 +122,10 @@ def initConfig( logger, configFile = defaultConfigFile ):
     config = ConfigParser.RawConfigParser()
     config.read( configFile )
 
-    cartridgeIds = config.options( 'hucards' )
+    huCardIds = config.options( 'hucards' )
     hucards = {}
 
-    for uid in cartridgeIds:
+    for uid in huCardIds:
         hucards[ uid ] = config.get( 'hucards', uid )
 
     return {

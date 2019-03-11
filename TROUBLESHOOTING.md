@@ -17,7 +17,7 @@ If the system daemon isn't behaving the way you'd expect, you can run the code m
 2. Change your directory to the `nfc` subdirectory of the source.
 3. `python nfc_poll.py`
 4. Logging output should be visible on the command line.
-5. Try placing a cartridge over the sensor and watch for output.
+5. Try placing a HuCard over the sensor and watch for output.
 
 ### Electrical
 

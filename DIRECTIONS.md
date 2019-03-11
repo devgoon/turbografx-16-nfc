@@ -68,22 +68,22 @@ In this system, the HuCards don't need to be written to, we configure a mapping 
 
 ### Record your NFC tag UIDs
 1. Run `tail -f /dev/shm/nfc_poll.log`
-2. Place a cartridge (NFC tag) over the reader, the log should output "Reading NFC UID: 00000000000000" where the zeroes are the UID of the tag.
+2. Place a HuCard (NFC tag) over the reader, the log should output "Reading NFC UID: 00000000000000" where the zeroes are the UID of the tag.
 3. Copy/paste the UID into a text file.
 4. Continue with all tags you wish to use.
 5. To exit the log, hit \<Ctrl\>-C
 
 ### Record your desired games
 1. `cd ~/RetroPie/roms`
-2. Start typing `ls <system>/<name of game>` (e.g. `ls nes/Super`) to find the rom you want. Hit tab to complete the file, or hit tab twice to show possible matches. Don't forget to backslash things like spaces and parenthesis as you go.
+2. Start typing `ls <system>/<name of game>` (e.g. `ls pcengine/Bonk`) to find the rom you want. Hit tab to complete the file, or hit tab twice to show possible matches. Don't forget to backslash things like spaces and parenthesis as you go.
 3. After you finally tab through to the complete file, hit <enter>.
-4. Copy the resulting line and put it and put it next to the UID you want to use in your text file. (`e.g. nes/Super Mario Bros. (JU) [!].zip`) Make sure you don't have backslashes here.
+4. Copy the resulting line and put it and put it next to the UID you want to use in your text file. (`e.g. pcengine/Bonk's Adventure (USA).pce`) Make sure you don't have backslashes here.
 5. Repeat this process
 
 ### Write your HuCards in the config
 1. `sudo nano /etc/nfc_poll/nfc_poll.conf`
 2. At the bottom of the file, there's a `[hucards]` section.
-3. For each cartridge you want, add a line in this format: `<uid> = <game file>` (e.g. `00000000000000 = nes/Super Mario Bros. (JU) [!].zip`)
+3. For each HuCard you want, add a line in this format: `<uid> = <game file>` (e.g. `00000000000000 = pcengine/Bonk's Adventure (USA).pce`)
 4. `sudo systemctl restart nfc_poll`
 5. Try it out! Place one of your HuCards on the reader and the screen should go black for a couple seconds, then bring up your game. Remove it and it should go back to the dashboard.
 
