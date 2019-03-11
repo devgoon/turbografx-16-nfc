@@ -1,4 +1,4 @@
-# Turbograpx-16 Setup
+# TurboGrapx-16 Setup
 
 ## Prerequisites
 
@@ -89,7 +89,7 @@ In this system, the HuCards don't need to be written to, we configure a mapping 
 
 ## Install screen_manager
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
-2. (If you haven't already) `git clone https://github.com/coderkevin/turbograpx-16-nfc.git`
+2. (If you haven't already) `git clone https://github.com/vminnocci/turbograpx-16-nfc.git`
 3. `cd turbograpx-16-nfc/screen`
 4. `sudo make install`
 5. Restart your Pi (try the reset button!) and if you've done all the steps above, everything should be working!
