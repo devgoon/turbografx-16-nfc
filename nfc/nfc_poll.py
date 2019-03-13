@@ -69,7 +69,7 @@ class NFCPoll():
                 "# Action set by nfc_poll",
                 "",
                 "[Action]",
-                "type=dashboard",
+                "type=slideshow",
             ] )
 
     def writeScreenConfig( self, lines ):

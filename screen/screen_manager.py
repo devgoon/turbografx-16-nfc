@@ -14,8 +14,8 @@ logFormat = '%(asctime)s - %(levelname)s - %(message)s'
 logger = None # This is set to a valid logger in the main, below.
 
 RUNCOMMAND = "/opt/retropie/supplementary/runcommand/runcommand.sh"
-EMULATIONSTATION = "/opt/retropie/supplementary/emulationstation/emulationstation.sh"
-DEFAULT_ACTION = { 'type': 'dashboard' }
+FEH = "feh -Y -x -q -D 5 -B black -F -Z -z -r ~/Retropie/media"
+DEFAULT_ACTION = { 'type': 'slideshow' }
 
 # Action functions
 
@@ -33,13 +33,13 @@ def run_rom( options ):
         cmd = "{} 0 _SYS_ {} '{}'".format( RUNCOMMAND, system, path )
         return cmd
 
-def run_dashboard( options ):
-    logger.info( "Running dashboard" )
-    return EMULATIONSTATION
+def run_slideshow( options ):
+    logger.info( "Running slideshow" )
+    return FEH
 
 ACTIONS = {
-    'dashboard': run_dashboard,   # Expects no options
     'rom': run_rom,               # Expects { system, path }
+    'slideshow': run_slideshow,         # Expects { system, path }
 }
 
 def terminate_process( process ):

@@ -2,7 +2,7 @@
 
 This is a script that manages what shows on the screen for RetroPie.
 It is installed in place of emulationstation, and provides a system-level
-way of starting roms or emulationstation.
+way of starting roms or slideshow.
 
 # Installation
 
@@ -13,7 +13,7 @@ RetroPie autostart script. (`/opt/retropie/config/all/autostart.sh`)
 # Operation
 
 On startup, the `screen_manager.py` script will be run instead of `emulationstation`.
-However, default action is to run `emulationstation`, so if you have no config file,
+However, default action is to run `slideshow`, so if you have no config file,
 it will look the same as before.
 
 ## Configuration File
@@ -27,7 +27,7 @@ okay to write the same action to it multiple times.)
 
 This script and configuration file is designed to work with other system processes such as:
   - A daemon that monitors GPIOs for button presses, then starts a rom.
-  - An nfc reader daemon that watches for a tag and starts a rom, then runs the dashboard after the tag is removed.
+  - An nfc reader daemon that watches for a tag and starts a rom, then runs the slideshow after the tag is removed.
 
 All you have to do is handle your input the way you need to, and then write the
 config file in response.
@@ -36,12 +36,12 @@ For an example, look at my [NFC Poll Daemon](https://github.com/vminnocci/turbog
 
 The existing code for this script handles two action types by default (although you can add more!)
 
-### dashboard (emulationstation)
+### slideshow
 
-This action type simply runs emulationstation.
+This action type simply runs slideshow.
 ```
 [Action]
-type=dashboard
+type=slideshow
 ```
 
 ### rom

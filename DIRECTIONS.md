@@ -14,16 +14,12 @@
 6. Exit `raspi-config` program
 7. `sudo shutdown -r now` to reboot with i2c enabled.
 
-## Install libnfc
+
+## Install FEH
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
-2. `wget -O libnfc-1.7.1.tar.bz2 https://bintray.com/nfc-tools/sources/download_file?file_path=libnfc-1.7.1.tar.bz2`
-3. `tar -xvf libnfc-1.7.1.tar.bz2`
-4. `cd libnfc-1.7.1`
-5. `./configure --prefix=/usr --sysconfdir=/etc --with-drivers=pn532_i2c`
-6. `make`
-7. `sudo make install`
-8. After reboot, type `lsmod |grep i2c` and ensure that you see an `i2c_dev` in the list.
-9. Also, type `ls /dev/i2c*` and ensure that `/dev/i2c-1` is returned.
+2. sudo apt-get install feh
+3. cp -r turbograpx-16-nfc/art/cover ~/RetroPie/media
+4. Run feh -Y -x -q -D 5 -B black -F -Z -z -r ~/RetroPie/media 
 
 ## Configure libnfc
 1. `sudo nano /etc/nfc/libnfc.conf`
@@ -85,7 +81,7 @@ In this system, the HuCards don't need to be written to, we configure a mapping 
 2. At the bottom of the file, there's a `[hucards]` section.
 3. For each HuCard you want, add a line in this format: `<uid> = <game file>` (e.g. `00000000000000 = pcengine/Bonk's Adventure (USA).pce`)
 4. `sudo systemctl restart nfc_poll`
-5. Try it out! Place one of your HuCards on the reader and the screen should go black for a couple seconds, then bring up your game. Remove it and it should go back to the dashboard.
+5. Try it out! Place one of your HuCards on the reader and the screen should go black for a couple seconds, then bring up your game. Remove it and it should go back to the slideshow.
 
 ## Install screen_manager
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
