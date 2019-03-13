@@ -14,12 +14,23 @@
 6. Exit `raspi-config` program
 7. `sudo shutdown -r now` to reboot with i2c enabled.
 
+## Install libnfc
+1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
+2. `wget -O libnfc-1.7.1.tar.bz2 https://bintray.com/nfc-tools/sources/download_file?file_path=libnfc-1.7.1.tar.bz2`
+3. `tar -xvf libnfc-1.7.1.tar.bz2`
+4. `cd libnfc-1.7.1`
+5. `./configure --prefix=/usr --sysconfdir=/etc --with-drivers=pn532_i2c`
+6. `make`
+7. `sudo make install`
+8. After reboot, type `lsmod |grep i2c` and ensure that you see an `i2c_dev` in the list.
+9. Also, type `ls /dev/i2c*` and ensure that `/dev/i2c-1` is returned.
 
 ## Install FEH
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
 2. sudo apt-get install feh
-3. cp -r turbograpx-16-nfc/art/cover ~/RetroPie/media
-4. Run feh -Y -x -q -D 5 -B black -F -Z -z -r ~/RetroPie/media 
+3. git clone https://github.com/vminnocci/turbograpx-16-nfc
+4. cp -r turbograpx-16-nfc/art/cover ~/RetroPie/media
+5. Run `feh -Y -x -q -D 5 -B black -F -Z -z -r ~/RetroPie/media`
 
 ## Configure libnfc
 1. `sudo nano /etc/nfc/libnfc.conf`
