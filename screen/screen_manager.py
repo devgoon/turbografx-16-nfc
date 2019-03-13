@@ -14,7 +14,7 @@ logFormat = '%(asctime)s - %(levelname)s - %(message)s'
 logger = None # This is set to a valid logger in the main, below.
 
 RUNCOMMAND = "/opt/retropie/supplementary/runcommand/runcommand.sh"
-FEH = "feh -Y -x -q -D 5 -B black -F -Z -z -r ~/Retropie/media"
+FEH = "feh -Y -x -q -D 5 -B black -F -Z -z -r ~/RetroPie/media"
 DEFAULT_ACTION = { 'type': 'slideshow' }
 
 # Action functions

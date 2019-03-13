@@ -15,13 +15,14 @@
 7. `sudo shutdown -r now` to reboot with i2c enabled.
 
 ## Install libnfc
-1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
+1. Ensure your NFC reader is wiring correctly [See](https://github.com/vminnocci/turbograpx-16-nfc/blob/master/NFC-RASPBERRY-PI.png) and you are logged in as `pi` and in the `/home/pi` directory.
 2. `wget -O libnfc-1.7.1.tar.bz2 https://bintray.com/nfc-tools/sources/download_file?file_path=libnfc-1.7.1.tar.bz2`
 3. `tar -xvf libnfc-1.7.1.tar.bz2`
 4. `cd libnfc-1.7.1`
 5. `./configure --prefix=/usr --sysconfdir=/etc --with-drivers=pn532_i2c`
 6. `make`
 7. `sudo make install`
+8. `sudo reboot`
 8. After reboot, type `lsmod |grep i2c` and ensure that you see an `i2c_dev` in the list.
 9. Also, type `ls /dev/i2c*` and ensure that `/dev/i2c-1` is returned.
 
@@ -30,7 +31,6 @@
 2. sudo apt-get install feh
 3. git clone https://github.com/vminnocci/turbograpx-16-nfc
 4. cp -r turbograpx-16-nfc/art/cover ~/RetroPie/media
-5. Run `feh -Y -x -q -D 5 -B black -F -Z -z -r ~/RetroPie/media`
 
 ## Configure libnfc
 1. `sudo nano /etc/nfc/libnfc.conf`
@@ -63,11 +63,10 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
 ## Install nfc_poll
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
 2. `export NFC_HOME=/home/pi/libnfc-1.7.1`
-3. `git clone https://github.com/vminnocci/turbograpx-16-nfc.git`
-4. `cd turbograpx-16-nfc/nfc`
-5. `make`
-6. `sudo make install`
-7. Run `systemctl status nfc_poll` and ensure you see "Active: active (running)" in the output
+3. `cd turbograpx-16-nfc/nfc`
+4. `make`
+5. `sudo make install`
+6. Run `systemctl status nfc_poll` and ensure you see "Active: active (running)" in the output
 
 ## Configure your HuCards
 
@@ -82,7 +81,7 @@ In this system, the HuCards don't need to be written to, we configure a mapping 
 
 ### Record your desired games
 1. `cd ~/RetroPie/roms`
-2. Start typing `ls <system>/<name of game>` (e.g. `ls pcengine/Bonk`) to find the rom you want. Hit tab to complete the file, or hit tab twice to show possible matches. Don't forget to backslash things like spaces and parenthesis as you go.
+2. Start typing `ls <system>/<name of game>` (e.g. `ls /pcengine/Bonk*`) to find the rom you want. Hit tab to complete the file, or hit tab twice to show possible matches. Don't forget to backslash things like spaces and parenthesis as you go.
 3. After you finally tab through to the complete file, hit <enter>.
 4. Copy the resulting line and put it and put it next to the UID you want to use in your text file. (`e.g. pcengine/Bonk's Adventure (USA).pce`) Make sure you don't have backslashes here.
 5. Repeat this process
@@ -96,8 +95,7 @@ In this system, the HuCards don't need to be written to, we configure a mapping 
 
 ## Install screen_manager
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
-2. (If you haven't already) `git clone https://github.com/vminnocci/turbograpx-16-nfc.git`
-3. `cd turbograpx-16-nfc/screen`
-4. `sudo make install`
-5. Restart your Pi (try the reset button!) and if you've done all the steps above, everything should be working!
+2. `cd turbograpx-16-nfc/screen`
+3. `sudo make install`
+4. Restart your Pi `sudo reboot` and if you've done all the steps above, everything should be working!
 
