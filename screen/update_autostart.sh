@@ -11,3 +11,4 @@ H
 wq
 EOF
 
+sed '$ a @export DISPLAY=:0' $AUTOSTART_SH
