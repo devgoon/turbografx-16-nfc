@@ -3,11 +3,11 @@
 ## Prerequisites
 
 1. Ensure Python 2.7 is working correctly and installed in `/usr/bin/python2.7`
-2. `sudo apt-get install python-dev python-pip`
+2. Run `sudo apt-get install python-dev python-pip`
 
 ## Enable i2c device
-1. `sudo mkdir /etc/nfc`
-2. `sudo raspi-config`
+1. Run `sudo mkdir /etc/nfc`
+2. Run `sudo raspi-config`
 3. Select "5 Interfacing"
 4. Select "P5 I2C"
 5. Select "\<Yes\>"
@@ -16,18 +16,18 @@
 
 ## Install libnfc
 1. Ensure your NFC reader is wiring correctly [See](https://github.com/vminnocci/turbograpx-16-nfc/blob/master/NFC-RASPBERRY-PI.png) and you are logged in as `pi` and in the `/home/pi` directory.
-2. `wget -O libnfc-1.7.1.tar.bz2 https://bintray.com/nfc-tools/sources/download_file?file_path=libnfc-1.7.1.tar.bz2`
-3. `tar -xvf libnfc-1.7.1.tar.bz2`
-4. `cd libnfc-1.7.1`
-5. `./configure --prefix=/usr --sysconfdir=/etc --with-drivers=pn532_i2c`
-6. `make`
-7. `sudo make install`
-8. `sudo reboot`
+2. Run `wget -O libnfc-1.7.1.tar.bz2 https://bintray.com/nfc-tools/sources/download_file?file_path=libnfc-1.7.1.tar.bz2`
+3. Run `tar -xvf libnfc-1.7.1.tar.bz2`
+4. Run `cd libnfc-1.7.1`
+5. Run `./configure --prefix=/usr --sysconfdir=/etc --with-drivers=pn532_i2c`
+6. Run `make`
+7. Run `sudo make install`
+8. Run `sudo reboot`
 8. After reboot, type `lsmod |grep i2c` and ensure that you see an `i2c_dev` in the list.
 9. Also, type `ls /dev/i2c*` and ensure that `/dev/i2c-1` is returned.
 
 ## Configure libnfc
-1. `sudo nano /etc/nfc/libnfc.conf`
+1. Run `sudo nano /etc/nfc/libnfc.conf`
 2. Cut and paste the following and save the file.
 ```
 # Allow device auto-detection (default: true)
@@ -56,10 +56,11 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
 
 ## Install nfc_poll
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
-2. `export NFC_HOME=/home/pi/libnfc-1.7.1`
-3. `cd turbograpx-16-nfc/nfc`
-4. `make`
-5. `sudo make install`
+2. Run `git clone https://github.com/vminnocci/turbograpx-16-nfc`
+2. Run `export NFC_HOME=/home/pi/libnfc-1.7.1`
+3. Run `cd turbograpx-16-nfc/nfc`
+4. Run `make`
+5. Run `sudo make install`
 
 ## Install NFC Poll Service Manually
 1. Run `sudo nano /lib/systemd/system/nfc_poll.service`
@@ -100,15 +101,15 @@ In this system, the HuCards don't need to be written to, we configure a mapping 
 5. Repeat this process
 
 ### Write your HuCards in the config
-1. `sudo nano /etc/nfc_poll/nfc_poll.conf`
+1. Run `sudo nano /etc/nfc_poll/nfc_poll.conf`
 2. At the bottom of the file, there's a `[hucards]` section.
 3. For each HuCard you want, add a line in this format: `<uid> = <game file>` (e.g. `00000000000000 = pcengine/Bonk's Adventure (USA).pce`)
-4. `sudo systemctl restart nfc_poll`
+4. Run `sudo systemctl restart nfc_poll`
 5. Try it out! Place one of your HuCards on the reader and the screen should go black for a couple seconds, then bring up your game. Remove it and it should go back to the EmulationStation.
 
 ## Install screen_manager
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
-2. `cd turbograpx-16-nfc/screen`
-3. `sudo make install`
+2. Run `cd turbograpx-16-nfc/screen`
+3. Run `sudo make install`
 4. Restart your Pi `sudo reboot` and if you've done all the steps above, everything should be working!
 
