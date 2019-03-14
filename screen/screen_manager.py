@@ -118,8 +118,7 @@ class ScreenManager():
         logger.debug( "Running command: {}".format( cmd ) );
         new_env = dict(os.environ)
         new_env['DISPLAY'] = '0.0'
-
-        self.process = subprocess.Popen( shlex.split( cmd ),env=new_env,Shell=true )
+        self.process = subprocess.Popen( shlex.split( cmd ),env=new_env)
         # TODO: Do something if the user exits the process ( like using select+start in RetroArch )
 
     def start( self ):
