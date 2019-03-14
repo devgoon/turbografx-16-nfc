@@ -14,7 +14,7 @@ logFormat = '%(asctime)s - %(levelname)s - %(message)s'
 logger = None # This is set to a valid logger in the main, below.
 
 RUNCOMMAND = "/opt/retropie/supplementary/runcommand/runcommand.sh"
-FEH = "/var/lib/screen_manager/start_feh.sh"
+FEH = os.getenv("HOME")+"/turbograpx/screen_manager/start_feh.sh"
 DEFAULT_ACTION = { 'type': 'slideshow' }
 
 # Action functions

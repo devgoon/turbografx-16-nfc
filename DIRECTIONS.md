@@ -30,7 +30,7 @@
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
 2. sudo apt-get install feh
 3. git clone https://github.com/vminnocci/turbograpx-16-nfc
-4. cp -r turbograpx-16-nfc/art/cover ~/RetroPie/media
+4. sudo cp -r ~/turbograpx-16-nfc/art/cover /var/lib/screen_manager/media
 
 ## Configure libnfc
 1. `sudo nano /etc/nfc/libnfc.conf`
