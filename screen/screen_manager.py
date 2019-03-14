@@ -14,8 +14,8 @@ logFormat = '%(asctime)s - %(levelname)s - %(message)s'
 logger = None # This is set to a valid logger in the main, below.
 
 RUNCOMMAND = "/opt/retropie/supplementary/runcommand/runcommand.sh"
-FEH = os.getenv("HOME")+"/turbograpx/screen_manager/start_feh.sh"
-DEFAULT_ACTION = { 'type': 'slideshow' }
+EMULATIONSTATION = "/opt/retropie/supplementary/emulationstation/emulationstation.sh"
+DEFAULT_ACTION = { 'type': 'dashboard' }
 
 # Action functions
 
@@ -33,13 +33,13 @@ def run_rom( options ):
         cmd = "{} 0 _SYS_ {} '{}'".format( RUNCOMMAND, system, path )
         return cmd
 
-def run_slideshow( options ):
-    logger.info( "Running slideshow" )
-    return FEH
+def run_dashboard( options ):
+    logger.info( "Running dashboard" )
+    return EMULATIONSTATION
 
 ACTIONS = {
+    'dashboard': run_dashboard,   # Expects no options
     'rom': run_rom,               # Expects { system, path }
-    'slideshow': run_slideshow,         # Expects { system, path }
 }
 
 def terminate_process( process ):
@@ -116,9 +116,7 @@ class ScreenManager():
             terminate_process( self.process )
 
         logger.debug( "Running command: {}".format( cmd ) );
-        new_env = dict(os.environ)
-        new_env['DISPLAY'] = '0.0'
-        self.process = subprocess.Popen( shlex.split( cmd ),env=new_env)
+        self.process = subprocess.Popen( shlex.split( cmd ) )
         # TODO: Do something if the user exits the process ( like using select+start in RetroArch )
 
     def start( self ):
@@ -138,4 +136,3 @@ if __name__ == "__main__":
 
     screenManager = ScreenManager( args.config )
     screenManager.start()
-

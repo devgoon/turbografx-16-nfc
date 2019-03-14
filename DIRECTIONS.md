@@ -26,12 +26,6 @@
 8. After reboot, type `lsmod |grep i2c` and ensure that you see an `i2c_dev` in the list.
 9. Also, type `ls /dev/i2c*` and ensure that `/dev/i2c-1` is returned.
 
-## Install FEH
-1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
-2. sudo apt-get install feh
-3. git clone https://github.com/vminnocci/turbograpx-16-nfc
-4. sudo cp -r ~/turbograpx-16-nfc/art/cover /var/lib/screen_manager/media
-
 ## Configure libnfc
 1. `sudo nano /etc/nfc/libnfc.conf`
 2. Cut and paste the following and save the file.
@@ -91,7 +85,7 @@ In this system, the HuCards don't need to be written to, we configure a mapping 
 2. At the bottom of the file, there's a `[hucards]` section.
 3. For each HuCard you want, add a line in this format: `<uid> = <game file>` (e.g. `00000000000000 = pcengine/Bonk's Adventure (USA).pce`)
 4. `sudo systemctl restart nfc_poll`
-5. Try it out! Place one of your HuCards on the reader and the screen should go black for a couple seconds, then bring up your game. Remove it and it should go back to the slideshow.
+5. Try it out! Place one of your HuCards on the reader and the screen should go black for a couple seconds, then bring up your game. Remove it and it should go back to the EmulationStation.
 
 ## Install screen_manager
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
