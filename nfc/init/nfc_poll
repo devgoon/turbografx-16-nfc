@@ -8,7 +8,7 @@
 #
 ### BEGIN INIT INFO
 # Provides: nfc_poll_daemon
-# Required-Start: udev $local_fs
+# Required-Start: udev mountkernfs $local_fs
 # Required-Stop: $local_fs
 # Default-Start: S
 # Default-Stop:
