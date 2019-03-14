@@ -60,7 +60,25 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
 3. `cd turbograpx-16-nfc/nfc`
 4. `make`
 5. `sudo make install`
-6. Run `systemctl status nfc_poll` and ensure you see "Active: active (running)" in the output
+
+## Install NFC Poll Service Manually
+sudo nano /lib/systemd/system/nfc_poll.service
+
+[Unit]
+ Description=NFC Poll
+ After=multi-user.target
+
+[Service]
+ Type=idle
+ ExecStart=/usr/bin/python /var/lib/nfc_poll/nfc_poll_daemon.py > /dev/shm/nfc_poll.log
+
+[Install]
+ WantedBy=multi-user.target
+
+Run `systemctl status nfc_poll` and ensure you see "Active: active (running)" in the output
+sudo chmod 644 /lib/systemd/system/nfc_poll.service
+sudo systemctl enable nfc_poll.service
+sudo reboot
 
 ## Configure your HuCards
 
