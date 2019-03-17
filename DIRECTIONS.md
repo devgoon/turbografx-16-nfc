@@ -98,13 +98,15 @@ In this system, the HuCards don't need to be written to, we configure a mapping 
 2. Start typing `ls <system>/<name of game>` (e.g. `ls /pcengine/Bonk*`) to find the rom you want. Hit tab to complete the file, or hit tab twice to show possible matches. Don't forget to backslash things like spaces and parenthesis as you go.
 3. After you finally tab through to the complete file, hit <enter>.
 4. Copy the resulting line and put it and put it next to the UID you want to use in your text file. (`e.g. pcengine/Bonk's Adventure (USA).pce`) Make sure you don't have backslashes here.
-5. Repeat this process
+5. Repeat this process.
 
 ### Write your HuCards in the config
 1. Run `sudo nano /etc/nfc_poll/nfc_poll.conf`
 2. At the bottom of the file, there's a `[hucards]` section.
-3. For each HuCard you want, add a line in this format: `<uid> = <game file>` (e.g. `00000000000000 = pcengine/Bonk's Adventure (USA).pce`)
-4. Run `sudo systemctl restart nfc_poll`
+3. For each HuCard you want, add a line in this format: `<uid> = <game file>` (e.g. `00000000000000 = pcengine/Bonk's Adventure (USA).pce`).  [Like this](https://github.com/vminnocci/turbograpx-16-nfc/blob/master/nfc/etc/nfc_poll.conf)
+
+ 
+Run `sudo systemctl restart nfc_poll`
 5. Try it out! Place one of your HuCards on the reader and the screen should go black for a couple seconds, then bring up your game. Remove it and it should go back to the EmulationStation.
 
 ## Install screen_manager
