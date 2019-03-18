@@ -4,6 +4,7 @@ Support code for my version of a RPi-based Turbograpx 16
 This is based on/inspired by [Coderkevin](https://github.com/coderkevin/mini-nes). Thank you Kevin!
 - Even simpler version of Coderkevin's work with a focus on a TG-16
 - "HuCard" art sized for NFC Cards NTAG216 
+- Support for toggle switch power up/down
 
 Here's a more detailed list of the features:
 
