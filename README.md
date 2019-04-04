@@ -22,7 +22,7 @@ This system is designed to simply rely on the unique IDs already imprinted on yo
 The system does not have to be powered off to start a game. It continually scans for hucards and will restart Emulation Station as soon as a cart is installed. Don't worry if you like the feel of the old process though. You can still power off the system and install your cart and power it back on if you like.
 
 ## Using factory on/off switch
-In an attempt to keep the original console looking stock we will using a [Mausberry (Solder your own switch)]([Mausberry Switch]https://mausberry-circuits.myshopify.com/pages/soldering-your-own-switch)
+In an attempt to keep the original console looking stock we will using a [Mausberry switch]([Mausberry Switch]https://mausberry-circuits.myshopify.com/pages/soldering-your-own-switch)
 
 ## Using original controller
 Using [Bliss-Box Pro](https://bliss-box.net/store/Gamer-Pro-Kit-p129163061) with TG16 large dongle and [Old Skool](https://www.oldskoolgames.com/product-page/turbografx-16-pc-engine-controller) aftermarket controller
