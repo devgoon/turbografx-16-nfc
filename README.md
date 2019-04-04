@@ -4,7 +4,8 @@ Support code for my version of a RPi-based Turbograpx 16
 This is based on/inspired by [Coderkevin](https://github.com/coderkevin/mini-nes). Thank you Kevin!
 - Even simpler version of Coderkevin's work with a focus on a TG-16
 - "HuCard" art sized for NFC Cards NTAG216 
-- Support for toggle switch power up/down
+- Support for toggle switch power up/down using [Mausberry Switch](https://mausberry-circuits.myshopify.com/pages/soldering-your-own-switch)
+
 
 Here's a more detailed list of the features:
 
@@ -20,3 +21,8 @@ This system is designed to simply rely on the unique IDs already imprinted on yo
 
 The system doesn't have to be powered off to start a game. It continually scans for hucards and will restart Emulation Station as soon as a cart is installed. Don't worry if you like the feel of the old process though. You can still power off the system and install your cart and power it back on if you like.
 
+## Using factory on/off switch
+In an attempt to keep the original console looking stock we will using a Mausberry (Solder your own switch)
+
+## Using original controller
+Using Bliss-Box Pro with TG16 large dongle and Old Skool aftermarket controller
