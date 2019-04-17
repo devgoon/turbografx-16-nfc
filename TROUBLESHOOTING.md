@@ -1,4 +1,4 @@
-# TurboGrapx-16 Troubleshooting Guide
+# TurboGrafx-16 Troubleshooting Guide
 
 Things not working the way they should? Check here for some tactics on diagnosing your problem.
 
@@ -43,7 +43,7 @@ You can run this script manually just like the others, but you'll want to disabl
 
 To test:
 
-1. Edit the config file at `cat /dev/shm/screen_manager.cfg` in accordance with [the screen readme](https://github.com/vminnocci/turbograpx-16-nfc/blob/master/screen/README.md)
+1. Edit the config file at `cat /dev/shm/screen_manager.cfg` in accordance with [the screen readme](https://github.com/vminnocci/TurboGrafx-16-nfc/blob/master/screen/README.md)
 2. Try a `dashboard` action.
 3. Try a `rom` action.
 4. Try deleting the file to ensure the default action runs.

@@ -1,4 +1,4 @@
-# Builds nfc support code for turbograpx-16-nfc
+# Builds nfc support code for TurboGrafx-16-nfc
 #
 # Requirements:
 #   $NFC_HOME should be set to the libnfc-1.7.1 source directory

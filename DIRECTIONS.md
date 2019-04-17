@@ -1,4 +1,4 @@
-# TurboGrapx-16 Setup
+# TurboGrafx-16 Setup
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@
 7. `sudo shutdown -r now` to reboot with i2c enabled.
 
 ## Install libnfc
-1. Ensure your NFC reader is wiring correctly [See](https://github.com/devgoon/turbograpx-16-nfc/blob/master/NFC-RASPBERRY-PI.png) and you are logged in as `pi` and in the `/home/pi` directory.
+1. Ensure your NFC reader is wiring correctly [See](https://github.com/devgoon/TurboGrafx-16-nfc/blob/master/NFC-RASPBERRY-PI.png) and you are logged in as `pi` and in the `/home/pi` directory.
 2. Run `wget -O libnfc-1.7.1.tar.bz2 https://bintray.com/nfc-tools/sources/download_file?file_path=libnfc-1.7.1.tar.bz2`
 3. Run `tar -xvf libnfc-1.7.1.tar.bz2`
 4. Run `cd libnfc-1.7.1`
@@ -56,9 +56,9 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
 
 ## Install nfc_poll
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
-2. Run `git clone https://github.com/devgoon/turbograpx-16-nfc`
+2. Run `git clone https://github.com/devgoon/TurboGrafx-16-nfc`
 2. Run `export NFC_HOME=/home/pi/libnfc-1.7.1`
-3. Run `cd turbograpx-16-nfc/nfc`
+3. Run `cd TurboGrafx-16-nfc/nfc`
 4. Run `make`
 5. Run `sudo make install`
 
@@ -103,7 +103,7 @@ In this system, the HuCards don't need to be written to, we configure a mapping 
 ### Write your HuCards in the config
 1. Run `sudo nano /etc/nfc_poll/nfc_poll.conf`
 2. At the bottom of the file, there's a `[hucards]` section.
-3. For each HuCard you want, add a line in this format: `<uid> = <game file>` (e.g. `00000000000000 = pcengine/Bonk's Adventure (USA).pce`).  [Like this](https://github.com/devgoon/turbograpx-16-nfc/blob/master/nfc/etc/nfc_poll.conf)
+3. For each HuCard you want, add a line in this format: `<uid> = <game file>` (e.g. `00000000000000 = pcengine/Bonk's Adventure (USA).pce`).  [Like this](https://github.com/devgoon/TurboGrafx-16-nfc/blob/master/nfc/etc/nfc_poll.conf)
 
  
 Run `sudo systemctl restart nfc_poll`
@@ -111,7 +111,7 @@ Run `sudo systemctl restart nfc_poll`
 
 ## Install screen_manager
 1. Ensure you are logged in as `pi` and in the `/home/pi` directory.
-2. Run `cd turbograpx-16-nfc/screen`
+2. Run `cd TurboGrafx-16-nfc/screen`
 3. Run `sudo make install`
 4. Restart your Pi `sudo reboot` and if you've done all the steps above, everything should be working!
 

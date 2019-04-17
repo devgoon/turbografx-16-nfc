@@ -32,7 +32,7 @@ This script and configuration file is designed to work with other system process
 All you have to do is handle your input the way you need to, and then write the
 config file in response.
 
-For an example, look at my [NFC Poll Daemon](https://github.com/vminnocci/turbograpx-16-nfc/tree/master/nfc)
+For an example, look at my [NFC Poll Daemon](https://github.com/vminnocci/TurboGrafx-16-nfc/tree/master/nfc)
 
 The existing code for this script handles two action types by default (although you can add more!)
 
